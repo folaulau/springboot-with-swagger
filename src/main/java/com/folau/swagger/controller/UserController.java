@@ -5,6 +5,7 @@ import com.folau.swagger.dto.UserProfileUpdateDTO;
 import com.folau.swagger.dto.UserSignUpDTO;
 import com.folau.swagger.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -42,7 +43,9 @@ public class UserController {
         return ResponseEntity.status(OK).body(userDTO);
     }
 
-    @Operation(summary = "Get User Profile", description = "Get user by id")
+
+    @Operation(summary = "Get User Profile", description = "Get user by id",
+            security = { @SecurityRequirement(name = "bearer-key") })
     @GetMapping("/profile/{id}")
     public ResponseEntity<UserDTO> getUserProfile(@PathVariable Long id) {
         log.info("Get user request received for id: {}", id);
