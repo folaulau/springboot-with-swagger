@@ -1,4 +1,4 @@
-# springboot-with-swagger
+# Springboot with Springdoc
 
 ### How to run this project
 
