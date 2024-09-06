@@ -38,7 +38,7 @@ public class SpringbootWithSwaggerApplication {
                 Environment env = ctx.getEnvironment();
                 TimeZone timeZone = TimeZone.getDefault();
 
-                System.out.println("************************ Springboo with Springdoc ***********************************");
+                System.out.println("******************* Springboo with Springdoc ************************");
                 System.out.println("** Active Profile: " + Arrays.toString(env.getActiveProfiles()));
                 System.out.println("** Timezone: " + timeZone.getID());
                 System.out.println("** TimeStamp: " + new Date().toInstant().toString());
